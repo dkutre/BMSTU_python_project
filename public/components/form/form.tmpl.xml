@@ -1,0 +1,12 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="data">
+	<form>
+		<fest:attributes>
+			<fest:attribute name="class"><fest:value>data.class</fest:value></fest:attribute>
+		</fest:attributes>
+		<h1>
+			<fest:value>data.title</fest:value>
+		</h1>
+		<div class="{data.class}_inputs"></div>
+		<div class="{data.class}_controls"></div>
+	</form>
+</fest:template>

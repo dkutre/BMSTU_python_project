@@ -1,0 +1,7 @@
+<fest:template xmlns:fest="http://fest.mail.ru" context_name="attributes">
+    <input class="{attributes.class}"
+           type="{attributes.type}"
+           required='{attributes.required}'
+           name="{attributes.name}"
+           placeholder="{attributes.placeholder}"/>
+</fest:template>

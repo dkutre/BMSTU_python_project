@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- 6
+before_script:
+ - "export DISPLAY=:99.0"
+ - "sh -e /etc/init.d/xvfb start"
+deploy:
+  provider: heroku
+  api_key:
+    secure: f715a3d2-ff7d-45c6-87cd-dd724d845e24
+  app: registationrage
