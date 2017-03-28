@@ -49,7 +49,7 @@
         field.class = this.data.class + '_inputs_' + field.name;
         let input = new Input(field);
         this._el.querySelector('.' + this.data.class + '_inputs').appendChild(input._get());
-      })
+      });
     }
 
     /**
@@ -66,7 +66,7 @@
     _installControls() {
       let {controls = []} = this.data;
       controls.forEach(data => {
-        data.attrs.class = this.data.class + '_controls_' + data.text;
+        data.attrs.class = this.data.class + '_controls_' + data.class_info;
         let control = new Button(data);
         console.log(control);
         this._el.querySelector("." + this.data.class + '_controls').appendChild(control._get());

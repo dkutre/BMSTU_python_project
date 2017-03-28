@@ -80,14 +80,16 @@
           ],
           controls: [
             {
-              text: 'signin',
+              class_info: 'signin',
+              text: 'sign in',
               attrs: {
                 type: 'submit',
                 name: 'aaa'
               }
             },
             {
-              text: 'signup',
+              class_info: 'signup',
+              text: 'sign up',
               attrs: {
                 type: 'button'
               }

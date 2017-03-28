@@ -7,17 +7,6 @@
   const User = window.UserModel;
   const Session = window.SessionModel;
 
-  function validate(data) {
-    if (2 > data.login.length || data.login.length > 12) {
-      return {name: 'user', result: false};
-    }
-    if (data.password.length < 3) {
-      return {name: 'password', result: false};
-    }
-    return {result: true};
-  }
-
-
   class SignupView extends View {
     constructor(options = {}) {
       super(options);
@@ -53,18 +42,20 @@
             {name: 'email', placeholder: 'enter email', type: 'email', required: 'true'}
           ],
           controls: [
-            {
-              text: 'signup',
-              attrs: {
-                type: 'submit',
+              {
+                  class_info: 'singin',
+                  text: 'sing in',
+                  attrs: {
+                      type: 'button'
+                  }
+              },
+              {
+                  class_info: 'singup',
+                  text: 'sign up',
+                  attrs: {
+                      type: 'submit',
+                  }
               }
-            },
-            {
-              text: 'singin',
-              attrs: {
-                type: 'button'
-              }
-            }
           ]
         }
       });
