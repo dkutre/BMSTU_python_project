@@ -25,25 +25,6 @@
         .then(data => console.log(data))
         .catch(error => console.log(error));
     }
-
-    fetch() {
-      return this.send('GET', null, '${this.url}/${this.attributes.id}')
-        .then(data => JSON.parse(data))
-        .then(attrs => {
-          this.attributes = attrs;
-        })
-        .catch(error => console.log(error));
-    }
-
-    update() {
-      this.send('PUT', this.attributes, '${this.url}/${this.attributes.id}')
-        .then(data => JSON.parse(data))
-        .then(id => {
-          this.attributes.id = id;
-        })
-        .catch(error => console.log(error));
-    }
-
   }
 
   window.UserModel = User;

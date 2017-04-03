@@ -9,7 +9,7 @@
     }
 
     get baseUrl() {
-      return 'ourURL';
+      return 'https://backend-basis-dev.herokuapp.com/api';
     }
 
     get defaults() {

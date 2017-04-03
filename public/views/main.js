@@ -55,10 +55,6 @@
           .catch(error => console.log(error));
       });
 
-      this._component.addEventListenerOnChild('click', 'mainpage__buttons__singlegame', event => {
-        event.preventDefault();
-        this.router.go('/sgame');
-      });
 
       this._component.addEventListenerOnChild('click', 'mainpage__buttons__exit', event => {
         event.preventDefault();
@@ -69,24 +65,10 @@
     _createControls() {
       let buttons = [
         {
-          text: 'Single Player',
-          attrs: {
-            type: 'button',
-            name: 'singlegame'
-          }
-        },
-        {
           text: 'проверить аутентификацию',
           attrs: {
             type: 'button',
             name: 'auth'
-          }
-        },
-        {
-          text: 'Scoreboard',
-          attrs: {
-            type: 'button',
-            name: 'scoreboard'
           }
         },
         {
