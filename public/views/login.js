@@ -11,7 +11,7 @@
     if (2 > data.login.length || data.login.length > 12) {
       return {name: 'user', result: false};
     }
-    if (data.password.length < 3) {
+    if (data.password.length < 6) {
       return {name: 'password', result: false};
     }
     return {result: true};
@@ -44,7 +44,7 @@
         event.preventDefault();
         let formData = this._component.getFormData();
         let dataCheck = validate(formData);
-        if (dataCheck) {
+        if (dataCheck.result) {
           this.user = new User(formData);
           this.session = new Session(this.user, {});
           console.log(this.session);
@@ -57,7 +57,7 @@
                   }
                 });
         } else {
-          console.log('fail registration');
+            alert("Убедитесь, что ввели верные данные(пароль > 6 символов)");
         }
       });
 

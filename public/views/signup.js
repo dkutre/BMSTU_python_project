@@ -7,11 +7,20 @@
   const User = window.UserModel;
   const Session = window.SessionModel;
 
+    function validate(data) {
+        if (2 > data.login.length || data.login.length > 12) {
+            return {name: 'user', result: false};
+        }
+        if (data.password.length < 6) {
+            return {name: 'password', result: false};
+        }
+        return {result: true};
+    }
+
   class SignupView extends View {
     constructor(options = {}) {
       super(options);
       this.class = 'signup';
-      // '.${options.name}' || .js-login
       this._el = document.querySelector('.' + this.class);
       this.hide();
       this.options = options;
@@ -43,13 +52,6 @@
           ],
           controls: [
               {
-                  class_info: 'singin',
-                  text: 'sing in',
-                  attrs: {
-                      type: 'button'
-                  }
-              },
-              {
                   class_info: 'singup',
                   text: 'sign up',
                   attrs: {
@@ -67,7 +69,7 @@
         event.preventDefault();
         let formData = this._component.getFormData();
         let dataCheck = validate(formData);
-        if (dataCheck) {
+        if (dataCheck.result) {
           this.user = new User(formData);
           this.user.save()
             .then(() => {
@@ -82,12 +84,9 @@
                 console.log('fail registration');
               }
             });
+        } else {
+            alert("Убедитесь, что ввели верные данные(пароль > 6 символов)");
         }
-      });
-
-      this._component.addEventListenerOnChild('click', this.class + '_formsignup_controls_singin', event => {
-        event.preventDefault();
-        this.router.go('/');
       });
     }
 
