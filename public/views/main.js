@@ -3,6 +3,7 @@
 
   const Block = window.Block;
   const Button = window.Button;
+  const Session = window.SessionModel;
 
   class MainView extends View {
     constructor(options = {}) {
@@ -58,6 +59,8 @@
 
       this._component.addEventListenerOnChild('click', 'mainpage__buttons__exit', event => {
         event.preventDefault();
+        let session  = new Session({}, {});
+        session.logout();
         this.router.go('/');
       });
     }
